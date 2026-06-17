@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
+
+body {
+    font-family: "Playfair Display", Georgia, serif;
+}
+/* Premium Glassmorphic Card Engine */
+.rim-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #0d0d0d 0%, #080808 100%);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rim-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.95);
+}
+
+/* Wheel Blueprint Zoom & Spin Contrast Shifts */
+.rim-image {
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+    filter: brightness(0.65) contrast(1.15);
+}
+
+.rim-card:hover .rim-image {
+    transform: scale(1.06) rotate(1deg);
+    filter: brightness(0.9) contrast(1.05);
+}
+
+/* Translucent Sizing Badges */
+.dim-badge {
+    background: rgba(15, 15, 15, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Interactive Text Underline Physics */
+.rim-link-effect {
+    position: relative;
+}
+
+.rim-link-effect::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rim-card:hover .rim-link-effect::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

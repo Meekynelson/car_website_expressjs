@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body class="bg-black text-white antialiased selection:bg-neutral-800 selection:text-white">
+
+    <nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-5 border-b border-neutral-900/40 bg-black/60 backdrop-blur-md">
+        
+        <!-- Hamburger Menu -->
+        <!-- <button class="md:hidden flex flex-col justify-between h-3.5 w-5 text-white focus:outline-none">
+            <span class="w-full h-[1.5px] bg-white"></span>
+            <span class="w-full h-[1.5px] bg-white"></span>
+            <span class="w-3/4 h-[1.5px] bg-white"></span>
+        </button> -->
+
+        <div class=" md:flex items-center space-x-8 text-[13px] font-medium tracking-[0.2em] uppercase text-neutral-400">
+            <a href="/models" class="hover:text-white transition-colors">Models</a>
+            <a href="/rims" class="hover:text-white transition-colors">Rims</a>
+        </div>
+
+        <!-- Logo -->
+        <div id="logo" class="absolute left-1/2 -translate-x-1/2 text-sm md:text-2xl tracking-[0.35em] uppercase font-bold select-none whitespace-nowrap">
+            <h1 class="font-luxury-serif text-white tracking-[0.01em]"><a href="/">MEEKYNELSON</a></h1>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="flex items-center text-[10px] md:text-[13px] font-medium tracking-[0.1em] uppercase text-neutral-400">
+            <a href="/contact" class="transition-colors border border-neutral-800 px-1 py-1.5 md:px-2 md:py-2 hover:bg-white hover:text-black transition-all whitespace-nowrap">Contact Us</a>
+        </div>
+    </nav>
+
+    <% if(session?.status == 'success') { %>
+            <h1 class="fixed top-20 left-1/2 -translate-x-1/2 bg-gray-600 text-white px-4 py-2 rounded shadow-lg z-50">
+                <%= session.message %>
+            </h1>
+            
+        <% }else if(session?.status == 'error') { %>
+
+            <h1><%= session.message %></h1>
+ 
+        <% } else {%>
+            <% } %>
+
+    <!-- Main content -->
+    <main class="relative w-screen h-screen bg-[#070707] flex flex-col justify-between overflow-hidden">
+        <div class="spotlight"></div>
+        
+        <!-- Hero Content Layer Box -->
+        <div class="relative w-full h-full flex items-center mx-auto">
+    
+            <!-- Background Engine Canvas -->
+            <div class="absolute inset-0 w-full h-full pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20 lg:bg-gradient-to-r lg:from-black/90 lg:via-black/40 lg:to-transparent z-10"></div>
+                
+                <img src="https://www.hdcarwallpapers.com/download/brabus_700_2025-1920x1080.jpg" 
+                alt="Rolls Royce Cullinan II 2025 Edition" 
+                class="w-full h-full object-cover z-0 premium-car-img scale-105 object-center">
+            </div>
+        
+            <!-- For mobile -->
+            <div class="relative z-20 flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-4 lg:px-5 max-w-xl mx-auto lg:mx-10 transition-all duration-500 mt-auto mb-12 lg:my-auto">
+                <h1 class="font-luxury-serif text-2xl sm:text-3xl md:text-3xl font-light uppercase tracking-wide leading-[1.1] text-white drop-shadow-lg">
+                    Rolls Royces cullinan II 2025 Edition
+                </h1>
+                <p class="mt-4 md:mt-6 text-sm md:text-base font-light text-neutral-300 max-w-md leading-relaxed tracking-wide ">
+                    Bespoke carbon fiber anatomy and custom luxury refinements tailored for the ultimate Rolls-Royce electric coupe.
+                </p>
+                <div class="mt-8">
+                    <button class="bg-[#1e2d3b]/40 border border-[#2d4358]/60 text-[#bfe3ff] px-10 py-3.5 text-[11px] tracking-[0.25em] uppercase font-semibold hover:bg-[#25394d]/60 hover:text-white active:scale-95 transition-all duration-300 backdrop-blur-sm cursor-pointer shadow-2xl">
+                        Discover Now
+                    </button>
+                </div>
+            </div>
+        
+        </div>
+    </main>
+
+    <!--  BRAND SECTION -->
+    <section class="bg-[#0b0b0b] py-24 px-6 md:px-12 border-t border-neutral-950">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 space-y-3">
+                <p class="text-[10px] tracking-[0.3em] text-neutral-500 uppercase font-semibold">Empowering Masterpieces</p>
+                <h2 class="font-luxury-serif text-3xl md:text-4xl uppercase tracking-widest font-light">The Collections</h2>
+                <div class="w-12 h-[1px] bg-neutral-700 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="relative group h-[450px] overflow-hidden bg-neutral-900 border border-neutral-900/40">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80" alt="Supercars" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75">
+                    <div class="absolute bottom-8 left-8 z-20 space-y-2">
+                        <h3 class="font-luxury-serif text-xl uppercase tracking-wider">Supercars</h3>
+                        <p class="text-xs text-neutral-400 tracking-widest uppercase group-hover:text-white transition-colors">Explore Alterations →</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="relative group h-[450px] overflow-hidden bg-neutral-900 border border-neutral-900/40">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Luxury SUVs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75">
+                    <div class="absolute bottom-8 left-8 z-20 space-y-2">
+                        <h3 class="font-luxury-serif text-xl uppercase tracking-wider">Luxury SUVs</h3>
+                        <p class="text-xs text-neutral-400 tracking-widest uppercase group-hover:text-white transition-colors">Explore Alterations →</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="relative group h-[450px] overflow-hidden bg-neutral-900 border border-neutral-900/40">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=600&q=80" alt="Bespoke Rims" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75">
+                    <div class="absolute bottom-8 left-8 z-20 space-y-2">
+                        <h3 class="font-luxury-serif text-xl uppercase tracking-wider">Bespoke Rims</h3>
+                        <p class="text-xs text-neutral-400 tracking-widest uppercase group-hover:text-white transition-colors">View Details →</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-neutral-600 text-xs py-12 px-6 md:px-12 border-t border-neutral-900/50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <p class="tracking-widest font-light text-[11px] uppercase">&copy; 2026 MEEKYNELSON Design. All rights reserved.</p>
+            <div class="flex flex-wrap justify-center space-x-6 md:space-x-8 tracking-widest uppercase text-[10px] font-medium">
+                <p class="hover:text-white transition-colors">Privacy Policy</p>
+                <p class="hover:text-white transition-colors">Legal Notice</p>
+                <p class="hover:text-white transition-colors">Cookie Settings</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

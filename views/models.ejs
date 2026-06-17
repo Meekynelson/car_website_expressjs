@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolls-Royce Collection Model</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/models.css">
+    
+</head>
+<body class="bg-[#050505] text-white antialiased selection:bg-neutral-800 selection:text-white">
+
+    <nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-5 border-b border-neutral-900/40 bg-black/60 backdrop-blur-md">
+        <div class=" md:flex items-center space-x-8 text-[13px] font-medium tracking-[0.2em] uppercase text-neutral-400">
+            <a href="/models" class="text-white transition-colors border-b border-white/40 pb-1">Models</a>
+            <a href="/rims" class="hover:text-white transition-colors">Rims</a>
+        </div>
+        <div id="logo" class="absolute left-1/2 -translate-x-1/2 text-sm md:text-2xl tracking-[0.35em] uppercase font-bold select-none whitespace-nowrap">
+            <h1 class="font-luxury-serif text-white tracking-[0.01em]"><a href="/">MEEKYNELSON</a></h1>
+        </div>
+        <div class="flex items-center text-[12px] md:text-[13px] font-medium tracking-[0.2em] uppercase text-neutral-400">
+            <a href="/contact" class="transition-colors border border-neutral-800 px-3 py-1.5 md:px-4 md:py-2 hover:bg-white hover:text-black transition-all whitespace-nowrap">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- 2. HEADER TITLE -->
+    <header class="pt-40 pb-12 px-6 md:px-12 max-w-9xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-900 pb-8">
+            <div>
+                <h2 class="font-luxury-serif text-3xl md:text-5xl uppercase tracking-widest font-light">Rolls-Royce Series</h2>
+            </div>
+        </div>
+    </header>
+
+    <!-- Rolls-Royce Card -->
+    <main class="px-6 md:px-12 max-w-9xl mx-auto pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Model 1: Spectre -->
+            <div class="model-card group h-[450px] md:h-[520px]">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent z-1 pointer-events-none"></div>
+                <img src="https://www.hdcarwallpapers.com/download/rolls_royce_spectre_bailey_2025-1920x1080.jpg" alt="Mansory Spectre" class="w-full h-full object-cover model-image">
+                
+                <div class="absolute inset-10 p-1 flex flex-col justify-between z-20">
+                    <span class="spec-blur text-[9px] tracking-[0.25em] uppercase px-3 py-1.5 self-start text-neutral-300 font-medium">Luxury</span>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-luxury-serif text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Spectre Bailey</h3>
+                            <p class="text-xs text-neutral-400 font-light mt-1 max-w-sm">Full carbon aerodynamics anatomy and tailor-made elements crafted for the absolute pinnacle luxury electric layout.</p>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-neutral-900/60 opacity-50 group-hover:opacity-100 transition-opacity duration-300 text-[12px] tracking-widest uppercase text-neutral-400">
+                            <div><p class="text-neutral-200 font-large">Power</p><p class="text-white font-semibold mt-0.5">659 HP</p></div>
+                            <div><p class="text-neutral-200 font-medium">V-Max</p><p class="text-white font-semibold mt-0.5">250 KM/H</p></div>
+                            <div><p class="text-neutral-200 font-small">0-100</p><p class="text-white font-semibold mt-0.5">4.5 SEC</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model 2: Linea D'Oro (Cullinan) -->
+            <div class="model-card group h-[450px] md:h-[520px]">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                <img src="https://www.hdcarwallpapers.com/download/rolls_royce_phantom_vii_metropolitan_collection_8k-3840x2160.jpg" alt="Mansory Linea D'Oro" class="w-full h-full object-cover model-image">
+                
+                <div class="absolute inset-0 p-8 flex flex-col justify-between z-20">
+                    <span class="spec-blur text-[9px] tracking-[0.25em] uppercase px-3 py-1.5 self-start text-neutral-300 font-medium">Luxury</span>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-luxury-serif text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Phantom</h3>
+                            <p class="text-xs text-neutral-400 font-light mt-1 max-w-sm">An architectural widebody masterpiece built on the Cullinan, showcasing forged carbon infused with real 24k gold leaf.</p>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-neutral-900/60 opacity-50 group-hover:opacity-100 transition-opacity duration-300 text-[12px] tracking-widest uppercase text-neutral-400">
+                            <div><p class="text-neutral-200 font-medium">Power</p><p class="text-white font-semibold mt-0.5">610 HP</p></div>
+                            <div><p class="text-neutral-200 font-medium">V-Max</p><p class="text-white font-semibold mt-0.5">280 KM/H</p></div>
+                            <div><p class="text-neutral-200 font-medium">0-100</p><p class="text-white font-semibold mt-0.5">5.0 SEC</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rolls-Royce Black Badge Ghost -->
+            <div class="model-card group h-[450px] md:h-[520px]">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                <img src="https://www.hdcarwallpapers.com/download/spofec_rolls_royce_black_badge_ghost_2026_8k-3840x2160.jpg" alt="Mansory Phantom" class="w-full h-full object-cover model-image">
+                
+                <div class="absolute inset-0 p-8 flex flex-col justify-between z-20">
+                    <span class="spec-blur text-[9px] tracking-[0.25em] uppercase px-3 py-1.5 self-start text-neutral-300 font-medium">Luxury</span>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-luxury-serif text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Black  Ghost</h3>
+                            <p class="text-xs text-neutral-400 font-light mt-1 max-w-sm">Imposing ground-effects kit, structural mesh front grille reconstruction, and a completely decoupled luxury rear cockpit.</p>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-neutral-900/60 opacity-50 group-hover:opacity-100 transition-opacity duration-300 text-[12px] tracking-widest uppercase text-neutral-400">
+                            <div><p class="text-neutral-200 font-medium">Power</p><p class="text-white font-semibold mt-0.5">610 HP</p></div>
+                            <div><p class="text-neutral-200 font-medium">V-Max</p><p class="text-white font-semibold mt-0.5">250 KM/H</p></div>
+                            <div><p class="text-neutral-200 font-medium">0-100</p><p class="text-white font-semibold mt-0.5">4.6 SEC</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model 4: Dawn Overdose -->
+            <div class="model-card group h-[450px] md:h-[520px]">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                <img src="https://www.hdcarwallpapers.com/download/urban_automotive_rolls_royce_cullinan_2025_8k-3840x2160.jpg" alt="Mansory Overdose" class="w-full h-full object-cover model-image">
+                
+                <div class="absolute inset-0 p-8 flex flex-col justify-between z-20">
+                    <span class="spec-blur text-[9px] tracking-[0.25em] uppercase px-3 py-1.5 self-start text-neutral-300 font-medium">Luxury</span>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-luxury-serif text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Cullinan</h3>
+                            <p class="text-xs text-neutral-400 font-light mt-1 max-w-sm">A massive high-profile widebody evolution engineered with aggressive air inlets and a fully tuned performance exhaust setup.</p>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-neutral-900/60 opacity-50 group-hover:opacity-100 transition-opacity duration-300 text-[12px] tracking-widest uppercase text-neutral-400">
+                            <div><p class="text-neutral-200 font-medium">Power</p><p class="text-white font-semibold mt-0.5">740 HP</p></div>
+                            <div><p class="text-neutral-200 font-medium">V-Max</p><p class="text-white font-semibold mt-0.5">285 KM/H</p></div>
+                            <div><p class="text-neutral-200 font-medium">0-100</p><p class="text-white font-semibold mt-0.5">3.9 SEC</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 4. LUXURY BRAND FOOTER -->
+    <footer class="bg-black text-neutral-600 text-xs py-12 px-6 md:px-12 border-t border-neutral-900/50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <p class="tracking-widest font-light text-[11px] uppercase">&copy; 2026 Meekynelson Design. All rights reserved.</p>
+            <div class="flex flex-wrap justify-center space-x-6 md:space-x-8 tracking-widest uppercase text-[10px] font-medium">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Legal Notice</a>
+                <a href="#" class="hover:text-white transition-colors">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
