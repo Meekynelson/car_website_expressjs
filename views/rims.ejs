@@ -14,105 +14,133 @@
     <!-- 1. FIXED GLASSMORPHIC NAVBAR -->
     <nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-5 border-b border-neutral-900/40 bg-black/60 backdrop-blur-md">
         
-        <!-- Hamburger Menu -->
-        <!-- <button class="md:hidden flex flex-col justify-between h-3.5 w-5 text-white focus:outline-none">
-            <span class="w-full h-[1.5px] bg-white"></span>
-            <span class="w-full h-[1.5px] bg-white"></span>
-            <span class="w-3/4 h-[1.5px] bg-white"></span>
-        </button> -->
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-toggle" class="md:hidden flex flex-col justify-between w-6 h-4 z-50 cursor-pointer" aria-label="Toggle Menu">
+            <span class="w-full h-[1px] bg-white transition-all duration-300 origin-left" id="bar1"></span>
+            <span class="w-full h-[1px] bg-white transition-all duration-300" id="bar2"></span>
+            <span class="w-full h-[1px] bg-white transition-all duration-300 origin-left" id="bar3"></span>
+        </button>
 
-        <div class=" md:flex items-center space-x-8 text-[13px] font-medium tracking-[0.2em] uppercase text-neutral-400">
+        <!-- Desktop Navigation links -->
+        <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium tracking-[0.2em] uppercase text-neutral-400">
             <a href="/models" class="hover:text-white transition-colors">Models</a>
-            <a href="/rims" class="hover:text-white transition-colors">Rims</a>
+            <a href="/rims" class="text-white transition-colors border-b border-white/40 pb-1">Rims</a>
         </div>
 
         <!-- Logo -->
-        <div id="logo" class="absolute left-1/2 -translate-x-1/2 text-sm md:text-2xl tracking-[0.35em] uppercase font-bold select-none whitespace-nowrap">
+        <div id="logo" class="absolute left-1/2 -translate-x-1/2 text-sm sm:text-base md:text-2xl tracking-[0.35em] uppercase font-bold select-none whitespace-nowrap">
             <h1 class="font-luxury-serif text-white tracking-[0.01em]"><a href="/">MEEKYNELSON</a></h1>
         </div>
 
-        <!-- Contact Us -->
-        <div class="flex items-center text-[10px] md:text-[13px] font-medium tracking-[0.1em] uppercase text-neutral-400">
-            <a href="/contact" class="transition-colors border border-neutral-800 px-1 py-1.5 md:px-2 md:py-2 hover:bg-white hover:text-black transition-all whitespace-nowrap">Contact Us</a>
+        <!-- Contact Us CTA -->
+        <div class="flex items-center text-[10px] md:text-[13px] font-medium tracking-[0.15em] uppercase text-neutral-400">
+            <a href="/contact" class="transition-colors border border-neutral-800 px-3 py-1.5 md:px-5 md:py-2 hover:bg-white hover:text-black transition-all whitespace-nowrap">Contact</a>
         </div>
     </nav>
 
+    <!-- MOBILE FULLSCREEN DRAWER MENU -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#050505] z-40 flex flex-col justify-center items-center space-y-8 text-lg tracking-[0.25em] uppercase font-medium transition-all duration-500 transform -translate-y-full opacity-0">
+        <a href="/models" class="text-neutral-400 hover:text-white transition-colors">Models</a>
+        <a href="/rims" class="text-white transition-colors">Rims</a>
+        <a href="/contact" class="text-neutral-400 hover:text-white transition-colors">Contact Us</a>
+    </div>
+
     <!-- 2. HEADER TITLE -->
-    <header class="pt-40 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-900 pb-8">
+    <header class="pt-32 lg:pt-44 pb-10 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-900 pb-8">
             <div>
-                <p class="text-[10px] tracking-[0.3em] text-neutral-500 uppercase font-semibold mb-2">Unsprung Mass Refinement</p>
+                <p class="text-[12px] tracking-[0.3em] text-neutral-400 uppercase font-semibold mb-2">Unsprung Mass Refinement</p>
                 <h2 class="font-luxury-serif text-3xl md:text-5xl uppercase tracking-widest font-light">Forged Wheel Programs</h2>
             </div>
-            <div class="text-xs text-neutral-500 tracking-widest uppercase font-light">
-                [ Fully Integrated Spinning Caps ]
+            <div class="text-[12px] sm:text-sm text-neutral-400 tracking-widest uppercase font-light">
+                Fully Integrated Spinning Caps 
             </div>
         </div>
     </header>
 
     <!-- 3. RIMS CATALOG DISPLAY GRID -->
     <main class="px-6 md:px-12 max-w-7xl mx-auto pb-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 1 column on mobile, 2 columns on tablets, 3 columns on desktop monitors -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             
             <!-- Wheel 1: MANSORY V.6 -->
-            <div id="wheel" class="rim-card group flex flex-col justify-between p-8 h-[500px]">
-                <div id="wheel-1" class="flex justify-between items-start">
-                    <span class="dim-badge text-[12px] tracking-[0.25em] uppercase px-3 py-1.5 text-neutral-300 font-medium">Ultra Light-Alloy</span>
-                    <span class="text-[14px] text-neutral-200 tracking-wider uppercase font-mono">TYPE V.6</span>
+            <div class="rim-card group flex flex-col justify-between p-5 sm:p-8 h-[360px] sm:h-[420px] lg:h-[480px]">
+                <div class="flex justify-between items-start w-full">
+                    <span class="dim-badge text-[9px] sm:text-[10px] tracking-[0.25em] uppercase px-2.5 py-1.5 text-neutral-300 font-medium">Ultra Light-Alloy</span>
+                    <span class="text-[11px] sm:text-[12px] text-neutral-200 tracking-wider uppercase font-mono">TYPE V.6</span>
                 </div>
                 
-                <!-- Central Wheel Visual Core -->
-                <div class="w-full h-full mx-auto relative flex items-center justify-center my-4">
-                    <img src="https://www.elitecustomrims.com/cdn/shop/files/kmvccqfoydbbqsx5bxjhamxr_1024x1024.png?v=1773777914" alt="Mansory V.6 Wheel" class="w-full h-full object-cover rounded-full rim-image">
+                <!-- Scaled image block to prevent vertical distortion -->
+                <div class="w-full h-[65%] max-h-[280px] mx-auto relative flex items-center justify-center my-4">
+                    <img src="https://www.elitecustomrims.com/cdn/shop/files/kmvccqfoydbbqsx5bxjhamxr_1024x1024.png?v=1773777914" alt="Mansory V.6 Wheel" class="max-w-full max-h-full object-contain rounded-full rim-image">
                 </div>
                 
-                <!-- <div class="space-y-4">
-                    <div class="border-b border-neutral-900/60 pb-3">
-                        <h3 class="font-luxury-serif text-xl uppercase tracking-wider text-white rim-link-effect inline-block">Mansory V.6 Variant</h3>
-                        <p class="text-xs text-neutral-400 font-light mt-1">Multi-spoke orientation constructed for Rolls-Royce Ghost platforms and modern Bentley architectures.</p>
-                    </div> -->
-                    <!-- Architecture Blueprint Details -->
-                    <!-- <div class="flex justify-between text-[10px] tracking-widest uppercase text-neutral-500">
-                        <div><p class="font-medium text-neutral-600">Available Diameters</p><p class="text-white font-medium mt-0.5">22" / 23" / 24"</p></div>
-                        <div class="text-right"><p class="font-medium text-neutral-600">Finishing Spec</p><p class="text-white font-medium mt-0.5">Gloss Diamond Black</p></div>
-                    </div> -->
-                <!-- </div> -->
+                <div class="flex justify-between items-end border-t border-neutral-900/60 pt-4 text-[12px] sm:text-[12px] tracking-wider uppercase text-neutral-500">
+                    <div>
+                        <p class="font-medium text-neutral-400">Sizing</p>
+                        <p class="text-white mt-0.5">22" — 24"</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-medium text-neutral-400">Signature Finish</p>
+                        <p class="text-white mt-0.5">Diamond Black</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Wheel 2: MANSORY Y.8 -->
-            <div class="rim-card group flex flex-col justify-between p-8 h-[500px]">
-                <div class="flex justify-between items-start">
-                    <span class="dim-badge text-[12px] tracking-[0.25em] uppercase px-3 py-1.5 text-neutral-300 font-medium">Monoblock Forged</span>
-                    <span class="text-[14px] text-neutral-200 tracking-wider uppercase font-mono">TYPE Y.8</span>
+            <div class="rim-card group flex flex-col justify-between p-5 sm:p-8 h-[360px] sm:h-[420px] lg:h-[480px]">
+                <div class="flex justify-between items-start w-full">
+                    <span class="dim-badge text-[9px] sm:text-[10px] tracking-[0.25em] uppercase px-2.5 py-1.5 text-neutral-300 font-medium">Monoblock Forged</span>
+                    <span class="text-[11px] sm:text-[12px] text-neutral-200 tracking-wider uppercase font-mono">TYPE V.8</span>
                 </div>
                 
-                <div class="w-full h-full mx-auto relative flex items-center justify-center my-4">
-                    <img src="https://elitecustoms.ae/cdn/shop/files/Screenshot_6_700x.png?v=1746817447" alt="Mansory Y.8 Wheel" class="w-full h-full object-cover rounded-full rim-image">
+                <div class="w-full h-[65%] max-h-[280px] mx-auto relative flex items-center justify-center my-4">
+                    <img src="https://elitecustoms.ae/cdn/shop/files/Screenshot_6_700x.png?v=1746817447" alt="Mansory Y.8 Wheel" class="max-w-full max-h-full object-contain rounded-full rim-image">
                 </div>
-                
+
+                <div class="flex justify-between items-end border-t border-neutral-900/60 pt-4 text-[9px] sm:text-[10px] tracking-wider uppercase text-neutral-500">
+                    <div>
+                        <p class="font-medium text-neutral-400">Sizing</p>
+                        <p class="text-white mt-0.5">22" — 24"</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-medium text-neutral-400">Signature Finish</p>
+                        <p class="text-white mt-0.5">Polished Silver</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Wheel 3: MANSORY FS.23 -->
-            <div class="rim-card group flex flex-col justify-between p-8 h-[500px]">
-                <div class="flex justify-between items-start">
-                    <span class="dim-badge text-[12px] tracking-[0.25em] uppercase px-3 py-1.5 text-neutral-300 font-medium">Floating Cap Tech</span>
-                    <span class="text-[14px] text-neutral-200 tracking-wider uppercase font-mono">TYPE FS.23</span>
+            <div class="rim-card group flex flex-col justify-between p-5 sm:p-8 h-[360px] sm:h-[420px] lg:h-[480px]">
+                <div class="flex justify-between items-start w-full">
+                    <span class="dim-badge text-[9px] sm:text-[10px] tracking-[0.25em] uppercase px-2.5 py-1.5 text-neutral-300 font-medium">Floating Cap Tech</span>
+                    <span class="text-[11px] sm:text-[12px] text-neutral-200 tracking-wider uppercase font-mono">TYPE FS.23</span>
                 </div>
                 
-                <div class="w-full h-full mx-auto relative flex items-center justify-center my-4">
-                    <img src="https://www.elitecustomrims.com/cdn/shop/files/1izdz1eyiyq1oaryzey2tbdu_1024x1024.png?v=1773777920" alt="Mansory FS.23 Wheel" class="w-full h-full object-cover rounded-full rim-image">
+                <div class="w-full h-[65%] max-h-[280px] mx-auto relative flex items-center justify-center my-4">
+                    <img src="https://www.elitecustomrims.com/cdn/shop/files/1izdz1eyiyq1oaryzey2tbdu_1024x1024.png?v=1773777920" alt="Mansory FS.23 Wheel" class="max-w-full max-h-full object-contain rounded-full rim-image">
                 </div>
-                
+
+                <div class="flex justify-between items-end border-t border-neutral-900/60 pt-4 text-[9px] sm:text-[10px] tracking-wider uppercase text-neutral-500">
+                    <div>
+                        <p class="font-medium text-neutral-600">Sizing</p>
+                        <p class="text-white mt-0.5">22" — 24"</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-medium text-neutral-600">Signature Finish</p>
+                        <p class="text-white mt-0.5">Dark Graphite</p>
+                    </div>
+                </div>
             </div>
 
         </div>
     </main>
 
     <!-- 4. LUXURY BRAND FOOTER -->
-    <footer class="bg-black text-neutral-600 text-xs py-12 px-6 md:px-12 border-t border-neutral-900/50">
+    <footer class="bg-black text-neutral-300 text-xs py-12 px-6 md:px-12 border-t border-neutral-900/50">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
             <p class="tracking-widest font-light text-[11px] uppercase">&copy; 2026 MEEKYNELSON Design. All rights reserved.</p>
-            <div class="flex flex-wrap justify-center space-x-6 md:space-x-8 tracking-widest uppercase text-[10px] font-medium">
+            <div class="flex flex-wrap justify-center gap-6 md:gap-8 tracking-widest uppercase text-[10px] font-medium">
                 <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" class="hover:text-white transition-colors">Legal Notice</a>
                 <a href="#" class="hover:text-white transition-colors">Cookie Settings</a>
@@ -120,5 +148,35 @@
         </div>
     </footer>
 
+    <!-- JS: Navigation Toggle Controller -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('translate-y-0');
+            
+            if (isOpen) {
+                // Collapse Panel
+                mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+                mobileMenu.classList.add('-translate-y-full', 'opacity-0');
+                // Standard Icon lines
+                bar1.classList.remove('rotate-45', 'translate-y-[6px]');
+                bar2.classList.remove('opacity-0');
+                bar3.classList.remove('-rotate-45', '-translate-y-[6px]');
+            } else {
+                // Expose Panel
+                mobileMenu.classList.remove('-translate-y-full', 'opacity-0');
+                mobileMenu.classList.add('translate-y-0', 'opacity-100');
+                // Cross Design transformation
+                bar1.classList.add('rotate-45', 'translate-y-[6px]');
+                bar2.classList.add('opacity-0');
+                bar3.classList.add('-rotate-45', '-translate-y-[6px]');
+            }
+        });
+    </script>
 </body>
 </html>

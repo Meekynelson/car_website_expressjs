@@ -13,7 +13,11 @@ router.get('/models', (req, res) => {
 router.get('/rims', (req, res) => {
     res.render('rims', { title: 'Rims', message: 'Welcome to the Rims page!' });
 });
-  
+
+router.get('/discover', (req, res) =>{
+    res.render('discover',{title: 'Discover', message: 'Welcome to the discover page'})
+})
+
 router.route("/contact")
     .get((req, res) => {
         res.render('contact', { title: 'Contact', message: 'Welcome to the Contact page!' });

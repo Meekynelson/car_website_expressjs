@@ -4,27 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rolls-Royce Collection Model</title>
+    <!-- Tailwind CSS v4 Engine -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- External Custom Stylesheet -->
     <link rel="stylesheet" href="./css/models.css">
-    
 </head>
 <body class="bg-[#050505] text-white antialiased selection:bg-neutral-800 selection:text-white">
 
+    <!-- 1. FIXED GLASSMORPHIC NAVBAR -->
     <nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-5 border-b border-neutral-900/40 bg-black/60 backdrop-blur-md">
-        <div class=" md:flex items-center space-x-8 text-[13px] font-medium tracking-[0.2em] uppercase text-neutral-400">
+        
+        <!-- Mobile Menu Toggle (Only visible on mobile screens) -->
+        <button id="menu-toggle" class="md:hidden flex flex-col justify-between w-6 h-4 z-50 cursor-pointer" aria-label="Toggle Menu">
+            <span class="w-full h-[1px] bg-white transition-all duration-300 origin-left" id="bar1"></span>
+            <span class="w-full h-[1px] bg-white transition-all duration-300" id="bar2"></span>
+            <span class="w-full h-[1px] bg-white transition-all duration-300 origin-left" id="bar3"></span>
+        </button>
+
+        <!-- Desktop Navigation links (Hidden on mobile to prevent overlapping with central logo) -->
+        <div class="hidden md:flex items-center space-x-8 text-[13px] font-medium tracking-[0.2em] uppercase text-neutral-400">
             <a href="/models" class="text-white transition-colors border-b border-white/40 pb-1">Models</a>
             <a href="/rims" class="hover:text-white transition-colors">Rims</a>
         </div>
-        <div id="logo" class="absolute left-1/2 -translate-x-1/2 text-sm md:text-2xl tracking-[0.35em] uppercase font-bold select-none whitespace-nowrap">
+
+        <!-- Centered Logo (Responsive scaling and positioning) -->
+        <div id="logo" class="absolute left-1/2 -translate-x-1/2 text-sm sm:text-base md:text-2xl tracking-[0.35em] uppercase font-bold select-none whitespace-nowrap">
             <h1 class="font-luxury-serif text-white tracking-[0.01em]"><a href="/">MEEKYNELSON</a></h1>
         </div>
-        <div class="flex items-center text-[12px] md:text-[13px] font-medium tracking-[0.2em] uppercase text-neutral-400">
-            <a href="/contact" class="transition-colors border border-neutral-800 px-3 py-1.5 md:px-4 md:py-2 hover:bg-white hover:text-black transition-all whitespace-nowrap">Contact Us</a>
+
+        <!-- Contact Us CTA -->
+        <div class="flex items-center text-[10px] md:text-[13px] font-medium tracking-[0.15em] uppercase text-neutral-400">
+            <a href="/contact" class="transition-colors border border-neutral-800 px-3 py-1.5 md:px-5 md:py-2 hover:bg-white hover:text-black transition-all whitespace-nowrap">Contact</a>
         </div>
     </nav>
 
+    <!-- MOBILE FULLSCREEN DRAWER (Toggled via JavaScript below) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#050505] z-40 flex flex-col justify-center items-center space-y-8 text-lg tracking-[0.25em] uppercase font-medium transition-all duration-500 transform -translate-y-full opacity-0">
+        <a href="/models" class="text-white transition-colors">Models</a>
+        <a href="/rims" class="hover:text-white text-neutral-400 transition-colors">Rims</a>
+        <a href="/contact" class="hover:text-white text-neutral-400 transition-colors">Contact Us</a>
+    </div>
+
     <!-- 2. HEADER TITLE -->
-    <header class="pt-40 pb-12 px-6 md:px-12 max-w-9xl mx-auto">
+    <header class="pt-32 lg:pt-44 pb-8 px-6 md:px-12 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-neutral-900 pb-8">
             <div>
                 <h2 class="font-luxury-serif text-3xl md:text-5xl uppercase tracking-widest font-light">Rolls-Royce Series</h2>
@@ -32,93 +54,96 @@
         </div>
     </header>
 
-    <!-- Rolls-Royce Card -->
-    <main class="px-6 md:px-12 max-w-9xl mx-auto pb-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- 3. ROLLS-ROYCE CARDS GRID -->
+    <main class="px-6 md:px-12 max-w-7xl mx-auto pb-24">
+        <!-- Responsive grid: 1 Column on Mobile, 2 Columns on large tablets/desktops -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
             
             <!-- Model 1: Spectre -->
-            <div class="model-card group h-[450px] md:h-[520px]">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent z-1 pointer-events-none"></div>
-                <img src="https://www.hdcarwallpapers.com/download/rolls_royce_spectre_bailey_2025-1920x1080.jpg" alt="Mansory Spectre" class="w-full h-full object-cover model-image">
+            <div class="model-card group h-[400px] sm:h-[480px] md:h-[520px]">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe6o7vs71ABjTi7FoIqW8oOsavsBW2xY7V1aWdA6iyEg&s=10" alt="Mansory Spectre" class="w-full h-full object-cover model-image">
                 
-                <div class="absolute inset-10 p-1 flex flex-col justify-between z-20">
+                <!-- Absolute info overlay wrapper -->
+                <div class="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-between z-20">
                     <span class="spec-blur text-[9px] tracking-[0.25em] uppercase px-3 py-1.5 self-start text-neutral-300 font-medium">Luxury</span>
                     
                     <div class="space-y-4">
                         <div>
-                            <h3 class="font-luxury-serif text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Spectre Bailey</h3>
-                            <p class="text-xs text-neutral-400 font-light mt-1 max-w-sm">Full carbon aerodynamics anatomy and tailor-made elements crafted for the absolute pinnacle luxury electric layout.</p>
+                            <h3 class="font-luxury-serif text-xl sm:text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Spectre Bailey</h3>
+                            <p class="text-[11px] sm:text-xs text-neutral-400 font-light mt-2 max-w-md leading-relaxed">Full carbon aerodynamics anatomy and tailor-made elements crafted for the absolute pinnacle luxury electric layout.</p>
                         </div>
-                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-neutral-900/60 opacity-50 group-hover:opacity-100 transition-opacity duration-300 text-[12px] tracking-widest uppercase text-neutral-400">
-                            <div><p class="text-neutral-200 font-large">Power</p><p class="text-white font-semibold mt-0.5">659 HP</p></div>
-                            <div><p class="text-neutral-200 font-medium">V-Max</p><p class="text-white font-semibold mt-0.5">250 KM/H</p></div>
-                            <div><p class="text-neutral-200 font-small">0-100</p><p class="text-white font-semibold mt-0.5">4.5 SEC</p></div>
+                        <!-- Spec Grid: Uses smaller fonts and dynamic spacing to prevent line breaks on small devices -->
+                        <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-neutral-900/60 opacity-60 group-hover:opacity-100 transition-opacity duration-300 text-[10px] sm:text-xs tracking-widest uppercase text-neutral-400">
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">Power</p><p class="text-white font-semibold mt-0.5">659 HP</p></div>
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">V-Max</p><p class="text-white font-semibold mt-0.5">250 KM/H</p></div>
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">0-100</p><p class="text-white font-semibold mt-0.5">4.5 SEC</p></div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Model 2: Linea D'Oro (Cullinan) -->
-            <div class="model-card group h-[450px] md:h-[520px]">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
-                <img src="https://www.hdcarwallpapers.com/download/rolls_royce_phantom_vii_metropolitan_collection_8k-3840x2160.jpg" alt="Mansory Linea D'Oro" class="w-full h-full object-cover model-image">
+            <div class="model-card group h-[400px] sm:h-[480px] md:h-[520px]">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                <img src="https://images.unsplash.com/photo-1740098160485-d098fbf42814?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Um9sbHMtUm95Y2UlMjBQaGFudG9tfGVufDB8fDB8fHww" alt="Mansory Linea D'Oro" class="w-full h-full object-cover model-image">
                 
-                <div class="absolute inset-0 p-8 flex flex-col justify-between z-20">
+                <div class="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-between z-20">
                     <span class="spec-blur text-[9px] tracking-[0.25em] uppercase px-3 py-1.5 self-start text-neutral-300 font-medium">Luxury</span>
                     
                     <div class="space-y-4">
                         <div>
-                            <h3 class="font-luxury-serif text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Phantom</h3>
-                            <p class="text-xs text-neutral-400 font-light mt-1 max-w-sm">An architectural widebody masterpiece built on the Cullinan, showcasing forged carbon infused with real 24k gold leaf.</p>
+                            <h3 class="font-luxury-serif text-xl sm:text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Phantom</h3>
+                            <p class="text-[11px] sm:text-xs text-neutral-400 font-light mt-2 max-w-md leading-relaxed">An architectural widebody masterpiece built on the Cullinan, showcasing forged carbon infused with real 24k gold leaf.</p>
                         </div>
-                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-neutral-900/60 opacity-50 group-hover:opacity-100 transition-opacity duration-300 text-[12px] tracking-widest uppercase text-neutral-400">
-                            <div><p class="text-neutral-200 font-medium">Power</p><p class="text-white font-semibold mt-0.5">610 HP</p></div>
-                            <div><p class="text-neutral-200 font-medium">V-Max</p><p class="text-white font-semibold mt-0.5">280 KM/H</p></div>
-                            <div><p class="text-neutral-200 font-medium">0-100</p><p class="text-white font-semibold mt-0.5">5.0 SEC</p></div>
+                        <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-neutral-900/60 opacity-60 group-hover:opacity-100 transition-opacity duration-300 text-[10px] sm:text-xs tracking-widest uppercase text-neutral-400">
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">Power</p><p class="text-white font-semibold mt-0.5">610 HP</p></div>
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">V-Max</p><p class="text-white font-semibold mt-0.5">280 KM/H</p></div>
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">0-100</p><p class="text-white font-semibold mt-0.5">5.0 SEC</p></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Rolls-Royce Black Badge Ghost -->
-            <div class="model-card group h-[450px] md:h-[520px]">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
-                <img src="https://www.hdcarwallpapers.com/download/spofec_rolls_royce_black_badge_ghost_2026_8k-3840x2160.jpg" alt="Mansory Phantom" class="w-full h-full object-cover model-image">
+            <!-- Model 3: Rolls-Royce Black Badge Ghost -->
+            <div class="model-card group h-[400px] sm:h-[480px] md:h-[520px]">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                <img src="https://images.unsplash.com/photo-1624804269473-828dcc30a210?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Um9sbHMtUm95Y2UlMjBCbGFjayUyMEdob3N0fGVufDB8fDB8fHww" alt="Mansory Phantom" class="w-full h-full object-cover model-image">
                 
-                <div class="absolute inset-0 p-8 flex flex-col justify-between z-20">
+                <div class="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-between z-20">
                     <span class="spec-blur text-[9px] tracking-[0.25em] uppercase px-3 py-1.5 self-start text-neutral-300 font-medium">Luxury</span>
                     
                     <div class="space-y-4">
                         <div>
-                            <h3 class="font-luxury-serif text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Black  Ghost</h3>
-                            <p class="text-xs text-neutral-400 font-light mt-1 max-w-sm">Imposing ground-effects kit, structural mesh front grille reconstruction, and a completely decoupled luxury rear cockpit.</p>
+                            <h3 class="font-luxury-serif text-xl sm:text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Black Ghost</h3>
+                            <p class="text-[11px] sm:text-xs text-neutral-400 font-light mt-2 max-w-md leading-relaxed">Imposing ground-effects kit, structural mesh front grille reconstruction, and a completely decoupled luxury rear cockpit.</p>
                         </div>
-                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-neutral-900/60 opacity-50 group-hover:opacity-100 transition-opacity duration-300 text-[12px] tracking-widest uppercase text-neutral-400">
-                            <div><p class="text-neutral-200 font-medium">Power</p><p class="text-white font-semibold mt-0.5">610 HP</p></div>
-                            <div><p class="text-neutral-200 font-medium">V-Max</p><p class="text-white font-semibold mt-0.5">250 KM/H</p></div>
-                            <div><p class="text-neutral-200 font-medium">0-100</p><p class="text-white font-semibold mt-0.5">4.6 SEC</p></div>
+                        <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-neutral-900/60 opacity-60 group-hover:opacity-100 transition-opacity duration-300 text-[10px] sm:text-xs tracking-widest uppercase text-neutral-400">
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">Power</p><p class="text-white font-semibold mt-0.5">610 HP</p></div>
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">V-Max</p><p class="text-white font-semibold mt-0.5">250 KM/H</p></div>
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">0-100</p><p class="text-white font-semibold mt-0.5">4.6 SEC</p></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Model 4: Dawn Overdose -->
-            <div class="model-card group h-[450px] md:h-[520px]">
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
-                <img src="https://www.hdcarwallpapers.com/download/urban_automotive_rolls_royce_cullinan_2025_8k-3840x2160.jpg" alt="Mansory Overdose" class="w-full h-full object-cover model-image">
+            <!-- Model 4: Dawn Overdose (Cullinan Variant) -->
+            <div class="model-card group h-[400px] sm:h-[480px] md:h-[520px]">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                <img src="https://images.unsplash.com/photo-1695334702343-877903386dc5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fFJvbGxzLVJveWNlJTIwQ3VsbGluYW58ZW58MHx8MHx8fDA%3D" alt="Mansory Overdose" class="w-full h-full object-cover model-image">
                 
-                <div class="absolute inset-0 p-8 flex flex-col justify-between z-20">
+                <div class="absolute inset-0 p-6 sm:p-8 md:p-10 flex flex-col justify-between z-20">
                     <span class="spec-blur text-[9px] tracking-[0.25em] uppercase px-3 py-1.5 self-start text-neutral-300 font-medium">Luxury</span>
                     
                     <div class="space-y-4">
                         <div>
-                            <h3 class="font-luxury-serif text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Cullinan</h3>
-                            <p class="text-xs text-neutral-400 font-light mt-1 max-w-sm">A massive high-profile widebody evolution engineered with aggressive air inlets and a fully tuned performance exhaust setup.</p>
+                            <h3 class="font-luxury-serif text-xl sm:text-2xl md:text-3xl uppercase tracking-wider text-white hover-underline inline-block">Rolls-Royce Cullinan</h3>
+                            <p class="text-[11px] sm:text-xs text-neutral-400 font-light mt-2 max-w-md leading-relaxed">A massive high-profile widebody evolution engineered with aggressive air inlets and a fully tuned performance exhaust setup.</p>
                         </div>
-                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-neutral-900/60 opacity-50 group-hover:opacity-100 transition-opacity duration-300 text-[12px] tracking-widest uppercase text-neutral-400">
-                            <div><p class="text-neutral-200 font-medium">Power</p><p class="text-white font-semibold mt-0.5">740 HP</p></div>
-                            <div><p class="text-neutral-200 font-medium">V-Max</p><p class="text-white font-semibold mt-0.5">285 KM/H</p></div>
-                            <div><p class="text-neutral-200 font-medium">0-100</p><p class="text-white font-semibold mt-0.5">3.9 SEC</p></div>
+                        <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-neutral-900/60 opacity-60 group-hover:opacity-100 transition-opacity duration-300 text-[10px] sm:text-xs tracking-widest uppercase text-neutral-400">
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">Power</p><p class="text-white font-semibold mt-0.5">740 HP</p></div>
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">V-Max</p><p class="text-white font-semibold mt-0.5">285 KM/H</p></div>
+                            <div><p class="text-neutral-500 font-medium text-[8px] sm:text-[10px]">0-100</p><p class="text-white font-semibold mt-0.5">3.9 SEC</p></div>
                         </div>
                     </div>
                 </div>
@@ -128,10 +153,10 @@
     </main>
 
     <!-- 4. LUXURY BRAND FOOTER -->
-    <footer class="bg-black text-neutral-600 text-xs py-12 px-6 md:px-12 border-t border-neutral-900/50">
+    <footer class="bg-black text-neutral-300 text-sm py-12 px-6 md:px-12 border-t border-neutral-900/10">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-            <p class="tracking-widest font-light text-[11px] uppercase">&copy; 2026 Meekynelson Design. All rights reserved.</p>
-            <div class="flex flex-wrap justify-center space-x-6 md:space-x-8 tracking-widest uppercase text-[10px] font-medium">
+            <p class="tracking-widest font-light text-[11px] uppercase">&copy; 2026 MEEKYNELSON Design. All rights reserved.</p>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-8 tracking-widest uppercase text-[10px] font-medium">
                 <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" class="hover:text-white transition-colors">Legal Notice</a>
                 <a href="#" class="hover:text-white transition-colors">Cookie Settings</a>
@@ -139,5 +164,35 @@
         </div>
     </footer>
 
+    <!-- Interactive Navigation Toggle Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('translate-y-0');
+            
+            if (isOpen) {
+                // Close Menu
+                mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+                mobileMenu.classList.add('-translate-y-full', 'opacity-0');
+                // Revert Burger Icon to normal lines
+                bar1.classList.remove('rotate-45', 'translate-y-[6px]');
+                bar2.classList.remove('opacity-0');
+                bar3.classList.remove('-rotate-45', '-translate-y-[6px]');
+            } else {
+                // Open Menu
+                mobileMenu.classList.remove('-translate-y-full', 'opacity-0');
+                mobileMenu.classList.add('translate-y-0', 'opacity-100');
+                // Transform Hamburger Icon into 'X'
+                bar1.classList.add('rotate-45', 'translate-y-[6px]');
+                bar2.classList.add('opacity-0');
+                bar3.classList.add('-rotate-45', '-translate-y-[6px]');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -41,3 +41,57 @@ body {
     background: linear-gradient(180deg, #0a0a0a 0%, #070707 100%);
     border: 1px solid rgba(255, 255, 255, 0.02);
 }
+
+/* Premium Floating Label Inputs */
+.premium-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #262626;
+    /* neutral-800 */
+    padding: 0.75rem 0;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.premium-input:focus {
+    border-color: #ffffff;
+    box-shadow: 0 1px 0 0 #ffffff;
+}
+
+/* Float Label Animation logic */
+.flex-col-reverse {
+    position: relative;
+}
+
+.premium-label {
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    color: #ffffff;
+    /* neutral-500 */
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* When input is focused or not empty, slide the label up and shrink it */
+.premium-input:focus~.premium-label,
+.premium-input:not(:placeholder-shown)~.premium-label {
+    top: -1rem;
+    font-size: 0.65rem;
+    color: #ffffff;
+}
+
+/* Modern Showroom Card styling */
+.showroom-card {
+    background: linear-gradient(135deg, #0a0a0a 0%, #050505 100%);
+    border: 1px solid #171717;
+    /* neutral-900 */
+    border-radius: 4px;
+}

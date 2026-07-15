@@ -4,7 +4,7 @@ const session = require('express-session');
 const router = require('./routes/index');
 
 const app = express();
-const port = 13000;
+const port = 12000;
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
